@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>로그인 — LinkBio Lite</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="dot"></span>LinkBio Lite</a>
+  <div class="topbar-spacer"></div>
+</header>
+
+<div class="page narrow">
+  <div class="card">
+    <h2 id="authTitle">무료로 시작하기</h2>
+    <div class="form-col">
+      <label>이메일</label>
+      <input type="email" id="authEmail" placeholder="you@example.com">
+      <label>비밀번호</label>
+      <input type="password" id="authPassword" placeholder="6자 이상">
+      <button class="btn block" id="authSubmitBtn" style="margin-top:6px;">가입하기</button>
+      <button class="btn ghost block" id="authToggleBtn">이미 계정이 있으신가요? 로그인</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-auth-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="firebase-init.js"></script>
+<script src="common.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
