@@ -1,17 +1,15 @@
 # LinkBio Lite
 
-Radically simple "link in bio" page builder — sign up, claim a slug, add
-links, get a shareable public page.
+A single "link in bio" page — edit one config file, no backend, no
+accounts.
 
 - **Live site**: https://chicagomenbusy777.github.io/linkbiolite/
-- **Setup**: [SETUP.md](SETUP.md) — Firebase connection, ~10 min.
+- **Setup**: [SETUP.md](SETUP.md) — fill in `config.js`, ~2 min.
 
 ## Files
 
 | File | Role |
 |---|---|
-| `index.html` | Landing page |
-| `login.html` / `auth.js` | Signup/login |
-| `dashboard.html` / `dashboard.js` | Claim slug, edit profile + links |
-| `page.html` / `page.js` | Public profile page (`?u=slug`) — no auth needed to view |
-| `firestore.rules` | Owner-only writes, public reads |
+| `index.html` | The whole page |
+| `app.js` | Reads `config.js`, renders the profile + links |
+| `config.js.example` | Copy to `config.js` with your name/bio/links |

@@ -1,24 +1,30 @@
-# LinkBio Lite — Firebase setup
+# LinkBio Lite — setup (no Firebase, no signup)
 
-Same pattern as the other Firebase-backed projects in this batch.
+Rebuilt as a single-owner static page: no account, no backend, no
+dashboard. You edit one file to change your links.
 
-1. https://console.firebase.google.com → new project.
-2. **Build → Firestore Database → Create database** → Production mode.
-3. **Build → Authentication → Sign-in method** → enable **Email/Password**
-   (every user signs up themselves — no single admin account here).
-4. Project settings → Your apps → register a web app → copy the config
-   into `firebase-config.js` (copy from `firebase-config.js.example`).
-   Commit it — it's a client identifier, not a secret.
-5. **Firestore Database → Rules** → paste `firestore.rules` → Publish.
-6. Push to `main`, enable GitHub Pages.
+## Setup
 
-Try it: sign up → claim a slug → add a couple links → save → open
-`page.html?u=yourslug` in a new tab.
+1. Copy `config.js.example` → `config.js`.
+2. Fill in your name, bio, and links:
+   ```js
+   window.PROFILE_CONFIG = {
+     displayName: "홍길동",
+     bio: "개발자 / 콘텐츠 크리에이터",
+     links: [
+       { label: "인스타그램", url: "https://instagram.com/..." },
+       { label: "유튜브", url: "https://youtube.com/..." }
+     ]
+   };
+   ```
+3. Commit `config.js` and push. That's it — refresh the live site.
 
-## Known MVP limitations
+To change your links later: edit `config.js`, commit, push. No login.
 
-- One profile per account. No slug-change flow once claimed (would need
-  copying data to a new doc and deleting the old one).
-- No custom domains, no analytics on link clicks, no drag-to-reorder for
-  links (just add/remove, top-to-bottom order = input order).
-- No password reset / email verification.
+## Trade-off vs. the earlier Firebase version
+
+This is one page for one person now, not a SaaS where many different
+people sign up and each get their own `yoursite.com/page.html?u=slug`.
+If you want that back (many customers, each with their own account and
+page), it needs a real backend again — say so and it can be rebuilt
+that way, same as before.

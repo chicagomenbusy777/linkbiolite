@@ -1,0 +1,12 @@
+// Copy to config.js and fill in your own info. Edit this file and
+// `git push` any time you want to change your links — no login, no
+// dashboard, no backend.
+window.PROFILE_CONFIG = {
+  displayName: "내 이름",
+  bio: "한 줄 소개를 여기에 적어주세요.",
+  links: [
+    { label: "인스타그램", url: "https://instagram.com/yourhandle" },
+    { label: "유튜브", url: "https://youtube.com/@yourhandle" },
+    { label: "이메일 보내기", url: "mailto:you@example.com" }
+  ]
+};
